@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Odin Project</title>
+</head>
+<body>
+    <main>
+   <section class="logo">
+    <div class="odin">
+    <img src="odin-lined.png" alt="Odin"  width="50">
+    <h1> ODIN</h1>
+    </div>
+   </section> 
+   <section class="text">
+    <div>
+    <p>This is a real online service! You know you need something like this in your life to help you realize your dreams. Sign up now to get started.</p>
+    <p>You know you want to.</p>
+    <h3>Let's do this</h3>
+    <form action="/">
+        
+        <div>
+        <label for="fname">FIRST NAME</label>
+        <input type="text" class="fname" name="fname" >
+    </div>
+    <div>
+        <label for="lname">LAST NAME</label>
+        <input type="text" class="lname" name="lname" >
+    </div>
+    <div>
+        <label for="email">Email</label>
+        <input type="email" class="email" name="email">
+    </div>
+    <div>
+        <label for="number">Phone Number</label>
+        <input type="text" class="number" name="number">
+    </div>
+    <div>
+        <label for="pword">Password</label>
+        <input type="password" class="pword" name="pword">
+        <p class="error"></p>
+    </div>
+    <div>
+        <label for="pword2">Confirm Password</label>
+        <input type="password" class="pword2" name="pword" >
+        <p class="error2"></p>
+    </div>
+    <button type="submit" onclick="validate(event)" class=".btn">Create Account</button>
+    </form>
+    <p>Already have an account? <a href="#">Log In</a></p>
+</div>
+    
+   </section>
+   </main>
+   <script>
+ 
+    
+     function validate(e){
+        
+        const password1 = document.querySelector('.pword').value;
+        const password2 = document.querySelector('.pword2').value;
+        const error = document.querySelector('.error');
+        
+           if(password1 != password2){
+             error.innerHTML = '*The password do not match';
+             e.preventDefault();
+          }
+         else{
+             return "DONE"
+        }
+     }
+   </script>
+</body>
+</html>

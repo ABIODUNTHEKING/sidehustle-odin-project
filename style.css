@@ -89,20 +89,20 @@
     background-color: #38472b;
     transition: 0.3s;
   }
+  div p{
+    font-size: 10px;
+  }
 
   .error, .error2{
     display: block;
     color: red;
     font-size: 10px;
   }
-  .pword, .pword2{
-    outline: 0;
-  }
-  .pword:focus, .pword2:focus{
-    border: 1px solid red;
-  }
+  
+  
   input{
     padding: 5px;
+    
   }
   a{
     color: #596D48;

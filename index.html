@@ -26,28 +26,32 @@
         
         <div>
         <label for="fname">FIRST NAME</label>
-        <input type="text" class="fname" name="fname" required>
+        <input type="text" class="fname" name="fname">
+        <p id="fname"></p>
     </div>
     <div>
         <label for="lname">LAST NAME</label>
-        <input type="text" class="lname" name="lname" required>
+        <input type="text" class="lname" name="lname" >
+        <p id="lname"></p>
     </div>
     <div>
         <label for="email">Email</label>
-        <input type="email" class="email" name="email" required>
+        <input type="text" class="email" name="email" >
+        <p id="email"></p>
     </div>
     <div>
         <label for="number">Phone Number</label>
-        <input type="text" class="number" name="number" required>
+        <input type="text" class="number" name="number">
+        <p id="number"></p>
     </div>
     <div>
         <label for="pword">Password</label>
-        <input type="password" class="pword" name="pword" required>
+        <input type="password" class="pword" name="pword">
         <p class="error"></p>
     </div>
     <div>
         <label for="pword2">Confirm Password</label>
-        <input type="password" class="pword2" name="pword" required>
+        <input type="password" class="pword2" name="pword" >
         <p class="error2"></p>
     </div>
     <button type="submit" onclick="validate(event)" class=".btn">Create Account</button>
@@ -61,19 +65,57 @@
  
     
      function validate(e){
-        
+        e.preventDefault();
         const password1 = document.querySelector('.pword').value;
         const password2 = document.querySelector('.pword2').value;
-        const error = document.querySelector('.error');
+        const pword = document.querySelector('.pword2').value;
+        const pword2 = document.querySelector('.pword').value;
+        const error = document.querySelector('.error').value;
+        const error2 = document.querySelector('.error2').value;
+        const fname = document.querySelector('.fname').value;
+        const lname = document.querySelector('.lname').value;
+        const email = document.querySelector('.email').value;
+        const number = document.querySelector('.number').value;
+        const ferror = document.querySelector('#fname');
+        const lerror = document.querySelector('#lname');
+        const mailerror = document.querySelector('#email');
+        const numbererror = document.querySelector('#number');
+        const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+        if(fname == ""){
+            ferror.innerHTML = "Please fill in your name"
+        }
+        else if(lname == ""){
+            lerror.innerHTML = "Please fill in your name"
+        }
+        else if(email == ""){
+            mailerror.innerHTML = "Please fill in your email"
+        }
+        else if(email != pattern){
+           mailerror.innerHTML = "Please put in a valid email address"
+        }
+        else if(number == ""){
+            numbererror.innerHTML = "Please fill in your phone number"
+        }
+        else if(password1 == ""){
+            error.innerHTML = "Please fill in your password"
+        }
+        else if(password2 == ""){
+            error2.innerHTML = "Please confirm your password"
+        }
         
-           if(password1 != password2){
+           else if(password1 != password2){
              error.innerHTML = '*The password do not match';
-             e.preventDefault();
-             
+             pword.style.borderColor = "red"
+            pword2.style.borderColor = "red"
+                
+          }
+          else if(password1 === password2){
+             pword2.style.borderColor = "#596D48"
+             pword.style.borderColor = "#596D48"
+                
           }
          else{
-            document.querySelector('.pword1').style.border = "1px solid #596D48"
-            document.querySelector('.pword2').style.border = "1px solid #596D48"
             console.log(DONE)
         }
      }

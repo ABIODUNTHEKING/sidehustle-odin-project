@@ -74,7 +74,9 @@
   div input{
     padding: 10px 15px;
   }
-
+  div input:focus{
+    border: 1px solid blue;
+  }
   button{
     padding: 10px 30px;
     border-radius: 10px;

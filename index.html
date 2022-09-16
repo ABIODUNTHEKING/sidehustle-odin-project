@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <title>Odin Project</title>
 </head>
 <body>
@@ -24,28 +25,28 @@
         
         <div>
         <label for="fname">FIRST NAME</label>
-        <input type="text" class="fname" name="fname" >
+        <input type="text" class="fname" name="fname" required>
     </div>
     <div>
         <label for="lname">LAST NAME</label>
-        <input type="text" class="lname" name="lname" >
+        <input type="text" class="lname" name="lname" required>
     </div>
     <div>
         <label for="email">Email</label>
-        <input type="email" class="email" name="email">
+        <input type="email" class="email" name="email" required>
     </div>
     <div>
         <label for="number">Phone Number</label>
-        <input type="text" class="number" name="number">
+        <input type="text" class="number" name="number" required>
     </div>
     <div>
         <label for="pword">Password</label>
-        <input type="password" class="pword" name="pword">
+        <input type="password" class="pword" name="pword" required>
         <p class="error"></p>
     </div>
     <div>
         <label for="pword2">Confirm Password</label>
-        <input type="password" class="pword2" name="pword" >
+        <input type="password" class="pword2" name="pword" required>
         <p class="error2"></p>
     </div>
     <button type="submit" onclick="validate(event)" class=".btn">Create Account</button>
@@ -67,9 +68,12 @@
            if(password1 != password2){
              error.innerHTML = '*The password do not match';
              e.preventDefault();
+             
           }
          else{
-             return "DONE"
+            document.querySelector('.pword1').style.border = "1px solid #596D48"
+            document.querySelector('.pword2').style.border = "1px solid #596D48"
+            console.log(DONE)
         }
      }
    </script>

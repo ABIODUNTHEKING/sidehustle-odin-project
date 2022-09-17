@@ -68,8 +68,8 @@
         e.preventDefault();
         const password1 = document.querySelector('.pword').value;
         const password2 = document.querySelector('.pword2').value;
-        const pword = document.querySelector('.pword2').value;
-        const pword2 = document.querySelector('.pword').value;
+        const pword = document.querySelector('.pword2');
+        const pword2 = document.querySelector('.pword');
         const error = document.querySelector('.error');
         const error2 = document.querySelector('.error2');
         const fname = document.querySelector('.fname').value;
@@ -108,7 +108,7 @@
            else if(password1 != password2){
              error.innerHTML = '*The password do not match';
              pword.style.borderColor = "red"
-            pword2.style.borderColor = "red"
+             pword2.style.borderColor = "red"
                 
           }
           else if(password1 === password2){

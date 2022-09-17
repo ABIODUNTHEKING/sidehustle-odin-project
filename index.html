@@ -85,24 +85,38 @@
         if(fname == ""){
             ferror.innerHTML = "Please fill in your name"
         }
-       
+        else if(fname != ""){
+            ferror.style.display = "none"
+        }
         else if(lname == ""){
             lerror.innerHTML = "Please fill in your name"
+        }
+        else if(fname != ""){
+            lerror.style.display = "none"
         }
         else if(email == ""){
             mailerror.innerHTML = "Please fill in your email"
         }
-        // else if(email != pattern){
-        //    mailerror.innerHTML = "Please put in a valid email address"
-        // }
+        else if(email != ""){
+            mailerror.style.display = "none"
+        }
         else if(number == ""){
             numbererror.innerHTML = "Please fill in your phone number"
+        }
+        else if(number != ""){
+            numbererror.style.display = "none"
         }
         else if(password1 == ""){
             error.innerHTML = "Please fill in your password"
         }
+        else if(password1 != ""){
+            error.style.display = "none"
+        }
         else if(password2 == ""){
             error2.innerHTML = "Please confirm your password"
+        }
+        else if(password2 != ""){
+            error2.style.display = "none"
         }
         
            else if(password1 != password2){

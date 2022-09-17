@@ -36,7 +36,7 @@
     </div>
     <div>
         <label for="email">Email</label>
-        <input type="text" class="email" name="email" >
+        <input type="email" class="email" name="email" >
         <p id="email"></p>
     </div>
     <div>
@@ -70,8 +70,8 @@
         const password2 = document.querySelector('.pword2').value;
         const pword = document.querySelector('.pword2').value;
         const pword2 = document.querySelector('.pword').value;
-        const error = document.querySelector('.error').value;
-        const error2 = document.querySelector('.error2').value;
+        const error = document.querySelector('.error');
+        const error2 = document.querySelector('.error2');
         const fname = document.querySelector('.fname').value;
         const lname = document.querySelector('.lname').value;
         const email = document.querySelector('.email').value;
@@ -80,7 +80,7 @@
         const lerror = document.querySelector('#lname');
         const mailerror = document.querySelector('#email');
         const numbererror = document.querySelector('#number');
-        const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+        // const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/
 
         if(fname == ""){
             ferror.innerHTML = "Please fill in your name"
@@ -92,9 +92,9 @@
         else if(email == ""){
             mailerror.innerHTML = "Please fill in your email"
         }
-        else if(email != pattern){
-           mailerror.innerHTML = "Please put in a valid email address"
-        }
+        // else if(email != pattern){
+        //    mailerror.innerHTML = "Please put in a valid email address"
+        // }
         else if(number == ""){
             numbererror.innerHTML = "Please fill in your phone number"
         }
